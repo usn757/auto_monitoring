@@ -84,7 +84,7 @@ class Monitoring {
     }
 
     public String getDataFromAPI(String path, String keyword, int display, int start, SortType sort) {
-        String url = pro.formatted(path);
+        String url = "https://openapi.naver.com/v1/search/%s".formatted(path);
         String params = "query=%s&display=%d&start=%d&sort=%s"
                 .formatted(
                         keyword, display, start, sort.value
