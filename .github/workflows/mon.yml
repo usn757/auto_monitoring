@@ -34,5 +34,5 @@ jobs:
           message: "모니터링 파일 저장"
           add: "."
         permissions: # GITHUB_TOKEN 권한 설정
-        contents: write
+          contents: write
       
