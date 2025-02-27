@@ -23,8 +23,8 @@ enum SortType {
 
 class Monitoring {
     private final Logger logger;
-    private final static String CLIENT_ID = System.env.NAVER_CLIENT_ID;
-    private final static String CLIENT_SECRET = System.env.NAVER_CLIENT_SECRET;
+    private final static String CLIENT_ID = System.getenv("NAVER-CLIENT-ID");
+    private final static String CLIENT_SECRET = System.getenv("NAVER-CLIENT-SECRET");
 
     public Monitoring() {
 //        logger = Logger.getLogger("Monitoring");
