@@ -9,7 +9,7 @@ import java.util.logging.*;
 public class App {
     public static void main(String[] args) {
         Monitoring monitoring = new Monitoring();
-        monitoring.getNews(System.getenv("KEYWORD"), 5, 1, SortType.sim);
+        monitoring.getNews(System.getenv("KEYWORD"), 10, 1, SortType.date);
     }
 }
 
@@ -60,7 +60,7 @@ class Monitoring {
             logger.info("제목 목록 생성 완료");
 
 
-            String imageResponse = getDataFromAPI("image", keyword, display, start, SortType.sim);
+            String imageResponse = getDataFromAPI("image", keyword, display, start, SortType.date);
             String imageLink = imageResponse
                     .split("link\":\"")[1].split("\",")[0]
                     .split("\\?")[0]
