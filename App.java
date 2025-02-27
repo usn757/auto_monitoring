@@ -23,8 +23,6 @@ enum SortType {
 
 class Monitoring {
     private final Logger logger;
-    private final static String CLIENT_ID = System.getenv("NAVER-CLIENT-ID");
-    private final static String CLIENT_SECRET = System.getenv("NAVER-CLIENT-SECRET");
 
     public Monitoring() {
 //        logger = Logger.getLogger("Monitoring");
@@ -93,8 +91,8 @@ class Monitoring {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url + "?" + params))
                 .GET()
-                .header("X-Naver-Client-Id", CLIENT_ID)
-                .header("X-Naver-Client-Secret", CLIENT_SECRET)
+                .header("X-Naver-Client-Id", System.getenv("NAVER_CLIENT_ID"))
+                .header("X-Naver-Client-Secret", System.getenv("NAVER_CLIENT_SECRET"))
                 .build();
 
         try {
